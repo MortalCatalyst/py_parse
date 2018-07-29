@@ -12,3 +12,5 @@ lxml = "*"
 
 [dev-packages]
 
+pylint = "*"
+"autopep8" = "*"
