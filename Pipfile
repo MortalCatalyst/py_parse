@@ -8,6 +8,7 @@ name = "pypi"
 [packages]
 
 lxml = "*"
+"bs4" = "*"
 
 
 [dev-packages]
