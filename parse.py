@@ -9,8 +9,11 @@ with open('20180728RHIL0.xml', 'rb') as fp:
     for cond in soup.find_all('condition'):
         cond.extract()
 
-    print(soup)
+    print(soup.select('race.id'))
+    # print(soup)
 
+    # items = [i for s in ['race.id', 'race.name'] for i in soup.select(s)]
+    # print(items)
     # parser = etree.XMLParser(remove_comments=True)
     # tree = etree.parse(data, parser=parser)
     # tree = etree.parse(data)
