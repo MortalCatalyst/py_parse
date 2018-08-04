@@ -1,8 +1,8 @@
 # from lxml import etree, objectify
 import collections
 from bs4 import BeautifulSoup
-
-with open('20180728RHIL0.xml', 'rb') as fp:
+import numpy as np
+with open('20180721RAND0.xml', 'rb') as fp:
     soup = BeautifulSoup(fp, "xml")
 
     for cond in soup.find_all('condition'):
@@ -23,16 +23,14 @@ with open('20180728RHIL0.xml', 'rb') as fp:
     # race_attrs = []
     # for attr in soup.race.attrs:
     #     race_attrs.append(attr)
-    def attrKey(element):
-        a = element
-        for attr in soup. .attrs:
-            yield attr
+    def gen_attr(element):
+        for e in soup.find_all(element):
+            yield e.attrs
 
-    raceAttr = attrKey('race')
-    nomAttr = attrKey('nomination')
-
-    for att in raceAttr:
-        print(att)
+    raceAttr = list(gen_attr('race'))
+    npraceAttr = np.array(raceAttr)
+    a = raceAttr[0]
+    print(a)
 
     # attrKey(race)
     # noms = soup.findAll('nomination')
